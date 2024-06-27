@@ -3,17 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tonchi Crypto Wallet</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Tonchi Wallet</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        window.Telegram.WebApp.ready();
+    </script>
 </head>
 <body>
-    <header class="header">
-        <h1>Tonchi Crypto Wallet</h1>
+    <header>
+        <button class="cancel-button">Cancel</button>
+        <h1>Tonchi <span>bot</span></h1>
+        <div class="menu-icon">⋮</div>
+        <div class="nav-icons">
+            <div class="profile">
+                <div class="profile-pic"></div>
+                <span>user</span>
+            </div>
+            <div class="profile">
+                <div class="profile-pic"></div>
+                <span>squad</span>
+            </div>
+            <div class="icons">
+                <div class="notification-icon">🔔</div>
+                <div class="settings-icon">⚙️</div>
+            </div>
+        </div>
     </header>
+    <nav>
+        <button class="tab">Home</button>
+        <button class="tab active">Wallet</button>
+    </nav>
     <main class="main-content">
         <section class="wallet">
             <div class="balance">
-                <p>Balance: <span id="balance">0.00</span> BTC</p>
+                <h2>Balance</h2>
+                <p class="amount">0 <span>YTC</span></p>
             </div>
             <div class="actions">
                 <button id="send-btn" class="icon-button">
@@ -26,11 +51,44 @@
                     <img src="../assets/images/buttons/main_screen/swap.svg" alt="Swap">
                 </button>
                 <button id="market-btn" class="icon-button">
-                    <img src="../assets/images/buttons/main_screen/market.svg" alt="market">
+                    <img src="../assets/images/buttons/main_screen/market.svg" alt="Market">
                 </button>
             </div>
         </section>
+        <section class="tasks">
+            <div class="task-info">
+                <div class="task-icon">🔵</div>
+                <div class="task-text">
+                    <h3>Tasks</h3>
+                    <p>Complete tasks and win</p>
+                </div>
+            </div>
+            <button class="task-button">JOIN TASKS</button>
+        </section>
+        <section class="coins">
+            <div class="coin-info">
+                <div class="coin-icon">🪙</div>
+                <div class="coin-text">
+                    <h3>Yellow Tonchi Coin</h3>
+                    <p>0 YTC</p>
+                </div>
+            </div>
+            <button class="coin-button">BUY MORE</button>
+        </section>
     </main>
-    <script src="../assets/js/app.js"></script>
+    <script>
+        const themeParams = window.Telegram.WebApp.themeParams;
+        document.body.style.backgroundColor = themeParams.bg_color || '#f0f0f5';
+        document.querySelector('header').style.backgroundColor = themeParams.secondary_bg_color || '#ffffff';
+        document.querySelector('header').style.color = themeParams.text_color || '#000000';
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.style.color = themeParams.hint_color || '#888888';
+        });
+        document.querySelector('.tab.active').style.color = themeParams.button_color || '#007aff';
+        document.querySelectorAll('.task-button, .coin-button').forEach(button => {
+            button.style.backgroundColor = themeParams.button_color || '#007aff';
+            button.style.color = themeParams.button_text_color || '#ffffff';
+        });
+    </script>
 </body>
 </html>

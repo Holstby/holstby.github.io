@@ -1,83 +1,144 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
-    height: 100vh;
+    padding: 0;
+}
+
+header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.cancel-button, .menu-icon, .notification-icon, .settings-icon {
+    font-size: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+h1 span {
+    font-size: 14px;
+}
+
+.nav-icons {
+    display: flex;
     align-items: center;
 }
 
-.header {
-    width: 100%;
-    text-align: center;
-    background-color: #f2f2f7;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.main-content {
+.profile {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    max-width: 500px;
-    padding: 20px;
-    box-sizing: border-box;
+    margin-right: 10px;
 }
 
-.wallet {
-    background: #F2F2F7;
+.profile-pic {
+    width: 20px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab {
+    font-size: 16px;
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.tab.active {
+    font-weight: bold;
+}
+
+main {
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 100%;
 }
 
 .balance {
+    text-align: center;
     margin-bottom: 20px;
-    font-size: 1.5em;
-    color: #333;
+}
+
+.balance .amount {
+    font-size: 48px;
+    margin: 0;
+}
+
+.balance span {
+    font-size: 24px;
 }
 
 .actions {
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    margin-bottom: 20px;
 }
 
 .icon-button {
-    flex: 1;
-    margin: 5px;
-    padding: 10px;
-    border: none;
     background: none;
+    border: none;
     cursor: pointer;
-    transition: transform 0.3s;
 }
 
 .icon-button img {
-    width: 100%;
-    height: auto;
-    max-width: 50px; /* Adjust the size as needed */
+    width: 40px;
+    height: 40px;
 }
 
-.icon-button:hover {
-    transform: scale(1.1);
+.tasks, .coins {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 
-@media (min-width: 768px) {
-    .actions {
-        position: relative;
-        bottom: 10%;
-    }
-
-    .icon-button img {
-        max-width: 70px; /* Adjust the size for larger screens */
-    }
+.task-info, .coin-info {
+    display: flex;
+    align-items: center;
 }
 
+.task-icon, .coin-icon {
+    font-size: 32px;
+    margin-right: 10px;
+}
+
+.task-text h3, .coin-text h3 {
+    margin: 0 0 5px 0;
+}
+
+.task-text p, .coin-text p {
+    margin: 0;
+}
+
+.task-button, .coin-button {
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
